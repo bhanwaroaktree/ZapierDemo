@@ -1,7 +1,7 @@
 module Zapier
   class Message < Zapier::Base
     def call_operation
-      HTTParty.post('https://hooks.zapier.com/hooks/catch/12401615/bzvbjzq/', body: params)
+      HTTParty.post(Rails.application.credentials.zapier_catch_url, body: params)
     end
 
     def params
