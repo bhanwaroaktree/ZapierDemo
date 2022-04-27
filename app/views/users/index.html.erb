@@ -1,0 +1,22 @@
+<h1>Users' List</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Email</th>
+      <th scope="col">App ID</th>
+      <th scope="col">API Key</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each_with_index do |user, index|%>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= user.email %></td>
+        <td><%= user.id %></td>
+        <td><%= user.api_key %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,23 @@
+<h1>Messages</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Message</th>
+      <th scope="col">User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @messages.each_with_index do |message, index|%>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= message.message %></td>
+        <td><%= message.user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+<%= link_to "New Message", new_message_path, class: "btn btn-primary float-end" %>
